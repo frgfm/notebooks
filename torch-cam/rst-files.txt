@@ -1,0 +1,2 @@
+quicktour.rst
+latency_benchmark.rst
