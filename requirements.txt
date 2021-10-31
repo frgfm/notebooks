@@ -1,0 +1,2 @@
+-e git+https://github.com/nthiery/rst-to-ipynb.git#egg=rst2ipynb
+requests>=2.20.0
