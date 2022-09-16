@@ -61,6 +61,6 @@ jobs:
           architecture: x64
       - name: Run black
         run: |
-          pip install "black[jupyter]"
+          pip install black
           black --version
           black --check --diff .
