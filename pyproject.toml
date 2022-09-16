@@ -1,0 +1,13 @@
+[tool.isort]
+line_length = 120
+src_paths = ["./", ".github"]
+skip_glob = "**/__init__.py"
+known_third_party = []
+
+[tool.pydocstyle]
+select = "D300,D301,D417"
+match = ".*\\.py"
+
+[tool.black]
+line-length = 120
+target-version = ['py38']
