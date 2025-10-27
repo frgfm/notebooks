@@ -1,13 +1,134 @@
-[tool.isort]
-line_length = 120
-src_paths = ["./", ".github"]
-skip_glob = "**/__init__.py"
-known_third_party = []
+[project]
+name = "frgfm-notebooks"
+version = "0.0.1.dev0"
+description = "Walkthrough notebooks for my projects"
+requires-python = ">=3.11,<4.0"
+license = {file = "LICENSE"}
+authors = [{ name = "François-Guillaume Fernandez", email = "fg-feedback@protonmail.com" }]
+readme = "README.md"
+keywords = ["tutorial", "walkthrough", "python", "jupyter notebooks"]
+dependencies = [
+    "notebook>=7.4.0,<8.0.0",
+    "pylocron @ git+https://github.com/frgfm/holocron.git",
+    "torchcam[scripts] @ git+https://github.com/frgfm/torch-cam.git"
+]
 
-[tool.pydocstyle]
-select = "D300,D301,D417"
-match = ".*\\.py"
+[project.optional-dependencies]
+rstconv = [
+    "requests>=2.20.0,<3.0.0",
+    "rst2ipynb @ git+https://github.com/nthiery/rst-to-ipynb.git",
+]
+quality = [
+    "ruff==0.14.2",
+    "ty==0.0.1a24",
+    "pre-commit==4.3.0",
+]
 
-[tool.black]
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true
+
+[tool.ruff]
 line-length = 120
-target-version = ['py38']
+target-version = "py311"
+preview = true
+extend-exclude = ['**/*.ipynb']
+
+[tool.ruff.lint]
+select = [  # https://docs.astral.sh/ruff/rules/
+    "ERA",  # eradicate
+    "FAST",  # FastAPI
+    "YTT",  # flake8-2020
+    "ANN",  # flake8-annotations
+    "ASYNC",  # flake8-async
+    "S",  # flake8-bandit
+    "BLE",  # flake8-blind-except
+    "B",  # flake8-bugbear
+    "A",  # flake8-builtins
+    "COM",  # flake8-commas
+    "C4",  # flake8-comprehensions
+    "CPY",  # flake8-copyright
+    "DTZ",  # flake8-datetimez
+    "T10",  # flake8-debugger
+    "ISC",  # flake8-implicit-str-concat
+    "ICN",  # flake8-import-conventions
+    "LOG",  # flake8-logging
+    "PIE",  # flake8-pie
+    "T20",  # flake8-print
+    "PYI",  # flake8-pyi
+    "PT",  # flake8-pytest-style
+    "Q",  # flake8-quotes
+    "RET",  # flake8-return
+    "SLF",  # flake8-self
+    "SIM",  # flake8-simplify
+    "ARG",  # flake8-unused-arguments
+    "PTH",  # flake8-use-pathlib
+    "FLY",  # flynt
+    "I",  # isort
+    "NPY",  # numpy
+    "N",  # pep8-naming
+    "PERF",  # perflint
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "DOC",  # pydoclint
+    "D",  # pydocstyle
+    "F",  # pyflakes
+    "PGH",  # pygrep-hooks
+    "PL",  # pylint
+    "UP",  # pyupgrade
+    "FURB",  # refurb
+    "RUF",  # ruff specific
+    "TRY",  # tryceratops
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B904",  # raise from
+    "C901",  # too complex
+    "F403",  # star imports
+    "E731",  # lambda assignment
+    "C416",  # list comprehension to list()
+    "ANN002",  # missing type annotations on *args
+    "ANN003",  # missing type annotations on **kwargs
+    "COM812",  # trailing comma missing
+    "N812",  # lowercase imported as non-lowercase
+    "ISC001",  # implicit string concatenation (handled by format)
+    "ANN401",  # Dynamically typed expressions (typing.Any) are disallowed
+    "D205",  # Blank line before docstring
+    "D100",  # missing doctring in public module
+    "D401",  # first docstring line should be in imperative mood
+    "D203", "D204",  # blank line required before & after docstring
+    "D413",  # blank line after last docstring section
+    "D213",  # docstring text can start on first line
+    "D107",  # no docstring for __init__
+    "TRY003",  # long messages outside exception class
+    "ERA001",  # commented-out code
+    "PLR2004",  # magic value comparison
+    "PLR0913",  # too many arguments in function definition
+    "PLR0917",  # too many positional arguments in function definition
+]
+exclude = [".git"]
+
+[tool.ruff.lint.flake8-quotes]
+docstring-quotes = "double"
+
+[tool.ruff.lint.isort]
+known-first-party = ["torchcam", "holocron"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/*.ipynb" = ["CPY001", "T201", "B905"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ty.environment]
+python-version = "3.11"
+python-platform = "linux"
+
+[tool.ty.rules]
+unresolved-import = "warn"
+
+[tool.ty.src]
+include = ["torchcam/"]
