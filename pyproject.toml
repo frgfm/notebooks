@@ -9,7 +9,7 @@ readme = "README.md"
 keywords = ["tutorial", "walkthrough", "python", "jupyter notebooks"]
 dependencies = [
     "notebook>=7.4.0,<8.0.0",
-    "holocron @ git+https://github.com/frgfm/holocron.git",
+    "pylocron @ git+https://github.com/frgfm/holocron.git",
     "torchcam[scripts] @ git+https://github.com/frgfm/torch-cam.git"
 ]
 
