@@ -11,7 +11,7 @@ sudo apt-get install pandoc -y
 ```
 then move on to the Python dependencies using pip:
 ```shell
-pip install -r requirements.txt
+pip install .
 ```
 
 ## Usage
