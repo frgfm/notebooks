@@ -34,6 +34,7 @@ explicit = true
 line-length = 120
 target-version = "py311"
 preview = true
+extend-exclude = ['**/*.ipynb']
 
 [tool.ruff.lint]
 select = [  # https://docs.astral.sh/ruff/rules/
