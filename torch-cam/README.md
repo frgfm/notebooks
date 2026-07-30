@@ -1,5 +1,9 @@
 # TorchCAM Notebooks
 
-These notebooks were automatically generated from the [TorchCAM documentation](https://github.com/frgfm/torch-cam/tree/master/docs/source/notebooks). If there is a typo to fix or a sentence to add, open a pull request in the [TorchCAM](https://github.com/frgfm/torch-cam) repo to fix the corresponding file in the `docs/source/notebooks` folder.
+These maintained examples complement the [TorchCAM documentation](https://frgfm.github.io/torch-cam/):
 
-If you suspect that there is a problem with the conversion process, please open an issue in this repo.
+- `quicktour.ipynb` uses the latest stable PyPI release.
+- `latency_benchmark.ipynb` and `performance_benchmark.ipynb` use the current `main` branch and CLI.
+
+Open notebook-specific issues in this repository. For TorchCAM API or model-support questions, use the
+[TorchCAM discussions](https://github.com/frgfm/torch-cam/discussions).
