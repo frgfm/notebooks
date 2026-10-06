@@ -18,3 +18,8 @@ pip install .
 ```shell
 make torchcam-notebooks
 ```
+
+For a fixed set of classifier failures and successful controls, run the
+[TorchCAM validation audit](torch-cam/validation_audit.ipynb). It saves per-sample
+explanations and a JSON report with scores, group counts, blank maps, and extraction
+errors. Run its setup cell to install the tested TorchCAM revision.
