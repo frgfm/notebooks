@@ -1,5 +1,5 @@
 # TorchCAM Notebooks
 
-These notebooks were automatically generated from the [TorchCAM documentation](https://github.com/frgfm/torch-cam/tree/master/docs/source/notebooks). If there is a typo to fix or a sentence to add, open a pull request in the [TorchCAM](https://github.com/frgfm/torch-cam) repo to fix the corresponding file in the `docs/source/notebooks` folder.
+The current TorchCAM examples are maintained directly in this directory. Open a pull request in this repository to update them.
 
-If you suspect that there is a problem with the conversion process, please open an issue in this repo.
+The legacy `make torchcam-notebooks` converter only writes the filenames listed in `rst-files.txt`. It does not generate or overwrite `validation_audit.ipynb`; edit that notebook here.
