@@ -24,9 +24,6 @@ For a fixed set of classifier failures and successful controls, run the
 explanations and a JSON report with scores, group counts, blank maps, and extraction
 errors. Run its setup cell to install the tested TorchCAM revision.
 
-For a trained controlled experiment, run
-[TorchCAM shortcut diagnosis and repair](torch-cam/shortcut_repair.ipynb). It tests CAM proposals with
-label-preserving edits and matched controls, then compares unchanged training, ordinary augmentation,
-provisional CAM-guided erasing, and a gated repair across three seeds. The executed notebook preserves
-an unsuccessful first attempt and reports a null repair advantage on a fresh test set, with a no-shortcut
-control, pinned dependencies, and runnable acceptance checks.
+For a trained experiment, run [TorchCAM shortcut diagnosis and repair](torch-cam/shortcut_repair.ipynb).
+It compares three training arms across three seeds, with matched edit tests, a no-shortcut control,
+pinned dependencies, and acceptance checks. The executed notebook retains failed attempts and null results.
